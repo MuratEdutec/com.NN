@@ -27,6 +27,13 @@ NnPages pages;
         pages=new NnPages();
         pages.button_MijnNn.click();
     }
+
+    @Then("click English version link")
+    public void clickEnglishVersionLink() {
+        pages=new NnPages();
+        pages.version_EN.click();
+
+    }
 }
 
 

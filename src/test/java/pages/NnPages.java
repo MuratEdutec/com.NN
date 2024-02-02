@@ -16,6 +16,9 @@ public class NnPages {
     public WebElement button_MijnNn;
 
 
+    @FindBy(xpath = "(//span[@lang='en'])")
+    public WebElement version_EN;
+
 
 
 
