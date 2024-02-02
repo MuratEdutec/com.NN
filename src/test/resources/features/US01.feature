@@ -6,6 +6,10 @@ Feature: US01_- Accessing mijn.nn is prohibited for users without a valid userna
     Then  accept cookies
     Then  click mijn.nn button
     Then  click English version link
+    Then  enter an invalid username and password
+    And   click Login to mijn.nn button
+    Then  verify that the invalid username and password banner is shown
+
 
 
 

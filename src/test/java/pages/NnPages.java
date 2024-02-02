@@ -7,19 +7,29 @@ import utilities.Driver;
 
 public class NnPages {
 
-    public NnPages() { PageFactory.initElements(Driver.getDriver(), this);}
+    public NnPages() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
-@FindBy(xpath = "(//button[@id='onetrust-accept-btn-handler'])")
+    @FindBy(xpath = "(//button[@id='onetrust-accept-btn-handler'])")
     public WebElement acceptCookies;
 
-@FindBy(xpath = "((//a[@href='/mijn.nn.htm'])[2])")
+    @FindBy(xpath = "((//a[@href='/mijn.nn.htm'])[2])")
     public WebElement button_MijnNn;
 
 
     @FindBy(xpath = "(//span[@lang='en'])")
     public WebElement version_EN;
 
+    @FindBy(xpath = "(//input[@name='username'])")
+    public WebElement input_Username;
+    @FindBy(xpath = "(//input[@name='password'])")
+    public WebElement input_Password;
+
+    @FindBy(xpath = "(//button[@data-cy='login-submit'])")
+    public WebElement button_Login_Submit;
 
 
-
+    @FindBy(xpath = "(//div[@class='u-margin-bottom c-notification c-notification--warning'])")
+    public WebElement warningAlert;
 }
