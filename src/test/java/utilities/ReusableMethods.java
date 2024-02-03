@@ -20,8 +20,6 @@ import static utilities.Driver.driver;
 public class ReusableMethods {
 
 
-
-
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -35,6 +33,7 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
@@ -168,6 +167,13 @@ public class ReusableMethods {
 
     }
 
+    public static void scrolldown_onestep() {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,100)");
+
+    }
+
 
     public static void scrolldown_slowly() {
 
@@ -177,7 +183,7 @@ public class ReusableMethods {
         js.executeScript("window.scrollBy(0,400)");
         ReusableMethods.justwait(2);
         js.executeScript("window.scrollBy(0,400)");
-       }
+    }
 
 
     public static void scrolldown_bypixel_2000() {
@@ -199,8 +205,7 @@ public class ReusableMethods {
 
 
     // Sayfa üzerinde istenilen elemente gider
-    public static void focusToElement(WebElement element)
-    {
+    public static void focusToElement(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.scrollToElement(element);
     }
@@ -219,7 +224,7 @@ public class ReusableMethods {
         }
     }
 
-    public static void signIn(String userEmailAddress, String userPassword){
+    public static void signIn(String userEmailAddress, String userPassword) {
         WebElement userEmailTextBox = driver.findElement(By.xpath("//input[@name='login']"));
         WebElement useremailTesxtBox = driver.findElement(By.xpath("//input[@name='password']"));
         WebElement signInbutton = driver.findElement(By.xpath("//button[text()='Sign In']"));
@@ -233,7 +238,6 @@ public class ReusableMethods {
     public static void navigateback() {
         driver.navigate().back();
     }
-
 
 
     public static Select select(WebElement ddm) {
@@ -289,6 +293,7 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)");
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));

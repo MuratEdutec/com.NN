@@ -20,6 +20,8 @@ public class NnPages {
 
     @FindBy(xpath = "(//span[@lang='en'])")
     public WebElement version_EN;
+    @FindBy(xpath = "(//span[@lang='nl'])")
+    public WebElement version_NL;
 
     @FindBy(xpath = "(//input[@name='username'])")
     public WebElement input_Username;
