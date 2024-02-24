@@ -27,6 +27,7 @@ public class NnStepDefinitions {
     @Then("click mijn.nn button")
     public void clickMijnNnButton() {
         pages = new NnPages();
+        ReusableMethods.justwait(3);
         pages.button_MijnNn.click();
     }
 

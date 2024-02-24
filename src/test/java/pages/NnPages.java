@@ -14,7 +14,7 @@ public class NnPages {
     @FindBy(xpath = "(//button[@id='onetrust-accept-btn-handler'])")
     public WebElement acceptCookies;
 
-    @FindBy(xpath = "((//a[@href='/mijn.nn.htm'])[2])")
+    @FindBy(xpath = "((//*[@class='c-button'])[2])")
     public WebElement button_MijnNn;
 
 
